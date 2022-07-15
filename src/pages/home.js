@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Grid } from "@mui/material";
 import axios from "axios";
 
+import Chat from '../components/Chats'
+
 export class home extends Component {
   state = {
     chats: null,
@@ -19,7 +21,7 @@ export class home extends Component {
   }
   render() {
     let recentChatsMarkup = this.state.chats ? (
-      this.state.chats.map((chat) => <p>{chat.body}</p>)
+      this.state.chats.map((chat) => <Chat chat={chat} />)
     ) : (
       <p>Please sign in to view this...</p>
     );
